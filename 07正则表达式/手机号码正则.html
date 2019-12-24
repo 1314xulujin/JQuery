@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+    * 手机号码特征:
+    *       1. 以数字1开头
+    *       2. 第二位只能为 3 4 5 6 7 8 9
+    *       3. 第三位 -  第十一为 数字
+    *       4. 总共长度为 11 位
+    *
+    *       注意: 如果需要制定长度范围的时候 ,一定要有开始和结束形成封闭的区间
+    * */
+        var telReg = /^1[3-9]\d{9}$/;
+
+        //正则对象中 有 验证 test() 方法 ,检测字符是否符合正则的规则,如果匹配则返回true , 否则为false
+        var tel= '13800138000';
+        console.log(telReg.test(tel));
+
+
+</script>
+</body>
+</html>

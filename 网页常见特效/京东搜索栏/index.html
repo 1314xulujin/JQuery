@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东搜索栏</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .search-box{
+            position: fixed;
+            top: -57px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            /*display: none;*/
+            border-bottom: 2px solid #CC0033;
+        }
+        .logo{
+            float: left;
+            width: 125px;
+            height: 40px;
+            background: url("images/sprite.head.png") right 0;
+            margin:10px 0 5px 0;
+        }
+        .search-box input,.search-box button{
+            border: 0;
+            float: left;
+        }
+        .search-box form{
+            float: left;
+            margin-top: 10px;
+            margin-left: 150px;
+        }
+        .search-box input{
+            width: 400px;
+            background-color: #f1f1f1;
+            height: 35px;
+        }
+        .search-box button{
+            width: 80px;
+            height: 35px;
+            background-color:#CC0033;
+            color: #fff;
+            font-size: 16px;
+        }
+        .toTop{
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            line-height: 25px;
+            background-color: #fd3f49;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+        .toTop:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <div class="wrap">
+            <a href="#" class="logo"></a>
+            <form action="">
+                <input type="text"/>
+                <button>搜索</button>
+            </form>
+        </div>
+    </div>
+    <div style="height: 3000px;background-color: #f1f1f1">
+
+    </div>
+    <div class="toTop">返回 <br/>顶部</div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+        //节流防抖，控制鼠标滚动多次触发
+        //滚动事件
+        var isScroll = true;
+        $(window).scroll(function(){
+            var topH  = $(this).scrollTop();//获取滚动距离
+            console.log(topH);
+            if(topH >=300){
+                $(".search-box").show();
+//                $(".search-box").stop().slideDown(300);
+                if(isScroll){
+                    isScroll = false;//类似关门
+                    $(".search-box").stop().animate({top:0},300,function(){
+                        isScroll = true;//开门
+                    });
+                }
+                console.log("可以显示了！");
+            }else{
+                $(".search-box").hide();
+                $(".search-box").css({top:'-57px'});
+            }
+        })
+
+        //返回顶部
+        $(".toTop").click(function(){
+//            $("html,body").scrollTop(0);
+            $("html,body").animate({scrollTop:0},800);
+        })
+    </script>
+</body>
+</html>

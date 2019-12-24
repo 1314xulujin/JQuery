@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="box">1啊哈哈啊哈哈哈啊哈啊啊哈哈啊</div>
+<div style="display: none;">2啊哈哈啊哈哈哈啊哈啊啊哈哈啊</div>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    $(function () {
+        //30. :visible 从匹配元素中 选取可见元素
+        $("div:visible").css("color","red");
+
+        //31. :hidden 从匹配元素中 ,选取不可见元素
+        $("div:hidden").css("color","green");
+
+    })
+</script>
+</body>
+</html>

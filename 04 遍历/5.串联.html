@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            /*border: 1px solid red;*/
+            margin: 50px auto;
+            padding: 50px;
+        }
+
+        #box div{
+            /*border: 1px solid #ccc;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+         <div>教育改变生活!</div>
+        <div>教育改变生活!</div>
+    </div>
+<script src="../js/jquery-v1.12.0.js"></script>
+    <script>
+        // $("#box").css("background","red");
+        // $("#box div").css("background","green");
+
+        // $("#box").css("border","10px solid red");
+        // $("#box div").css("border","10px solid red");
+
+        //1.串联 andSelf() 把先后匹配的元素整合一起
+        // $("#box").children().andSelf().css("border","10px solid red");
+
+        //2.end() 返回前面已经匹配过元素的上一层匹配元素
+           $("#box").children().eq(0).next().css("border","10px solid red").end().css("border","10px solid green");
+    </script>
+</body>
+</html>

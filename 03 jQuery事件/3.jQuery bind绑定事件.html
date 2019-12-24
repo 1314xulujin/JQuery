@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button>按钮</button>
+
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    var abc = {
+        a:10
+    }
+    //bind(事件类型(可用有多个,空格隔开),[data],处理函数) 事件处理器函数 (专门绑定事件的函数) 1.7- ,1.7+建议使用on
+    $("button").bind('click mouseover',abc,fn);
+    $("button").bind({
+        click:function(){
+
+        },
+        mouseover:function(){
+
+        }
+    });
+
+    $("button").bind('click mouseover',abc,fn2);
+    
+    
+    function fn(e) {
+        // alert('这是一个单击事件');
+        console.log(e.data);
+        // e.data.a = 20;
+    }
+
+    function fn2(e) {
+        // alert('这是一个单击事件');
+        console.log("第二个方法");
+        // e.data.a = 20;
+    }
+
+
+</script>
+</body>
+</html>

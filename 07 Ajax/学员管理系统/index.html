@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学员管理系统</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2>学员管理系统 <button class="btn btn-success pull-right" data-toggle="modal" data-target="#addModal">
+                <span class="glyphicon glyphicon-plus"></span>
+                添加学员</button></h2>
+        </div>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+              <tr>
+                  <th  class="text-center">#</th>
+                  <th  class="text-center">SID</th>
+                  <th  class="text-center">姓名</th>
+                  <th  class="text-center">性别</th>
+                  <th  class="text-center">班级</th>
+                  <th  class="text-center">地址</th>
+                  <th  class="text-center">创建时间</th>
+                  <th  class="text-center">操作</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="loading"></div>
+    <!--添加学员模态框-->
+    <div class="modal fade" id="addModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h3>添加学员</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="addForm">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">姓名:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">性别:</label>
+                            <div class="col-md-7">
+                                <label><input type="radio" name="sex" value="男">男</label>
+                                <label><input type="radio" name="sex" value="女">女</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">班级:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="class">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">地址:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="address">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center">
+                        <button class="btn btn-primary" id="addBtn">立即添加</button>
+                        <button class="btn btn-danger" data-dismiss="modal">关闭</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--查看学员模态框-->
+    <div class="modal fade" id="editModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h3>添加学员</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="editForm">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">SID:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="sid" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">姓名:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">性别:</label>
+                            <div class="col-md-7">
+                                <label><input type="radio" name="sex" value="男">男</label>
+                                <label><input type="radio" name="sex" value="女">女</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">班级:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="class">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">地址:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">创建者:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="author" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">IP:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="create_ip" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">创建时间:</label>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="create_time" disabled>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center">
+                        <button class="btn btn-success" id="editBtn">立即更新</button>
+                        <button class="btn btn-danger" data-dismiss="modal">关闭</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--确认删除模态框-->
+    <div class="modal fade" id="confirmModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close"  data-dismiss="modal"><span>&times;</span></button>
+                    <h5>确认提示</h5>
+                </div>
+                <div class="modal-body">
+                    您是否确认删除 <span>赵宝应</span>吗?
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center">
+                        <button class="btn-sm btn btn-danger" id="confirmDelete">确认删除</button>
+                        <button class="btn-sm btn btn-success" data-dismiss="modal">取消</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--分页:-->
+    <div class="text-center" style="vertical-align: middle;">
+        <ul class="pagination"></ul>
+        <div class="page">
+            <input type="number" class="form-control" id="page">
+        </div>
+        <button class="btn btn-primary" id="jump">跳转</button>
+    </div>
+    <script src="js/jquery-v1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/urls.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

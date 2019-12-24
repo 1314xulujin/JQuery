@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            position: relative;
+            width: 500px;
+            height: 442px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .tabs .tabs-nav{
+            overflow: hidden;
+        }
+        .tabs .tabs-nav a{
+            float: left;
+            width: 99px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 12px;
+            color: #666;
+            border:1px solid #f1f1f1;
+            margin-left: -1px;
+            background-color: #f9f9f9;
+        }
+        .tabs .tabs-nav a.open{
+            background: #fff;
+            border-bottom: none;
+            font-weight: bold;
+            color: #4F94CD;
+        }
+        .tabs .tabs-content{
+            position: absolute;
+            height: 400px;
+            width: 2500px;
+        }
+        .tabs .tabs-content .item{
+            float: left;
+            width: 500px;
+            height: 400px;
+            color: #999;
+            font-size: 80px;
+            line-height: 400px;
+            text-align: center;
+            /*display: none;*/
+            background: #fff;
+        }
+        .tabs .tabs-content .item.open{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--选项卡-->
+    <div class="tabs">
+        <!--选项卡导航-->
+        <div class="tabs-nav">
+            <a href="javascript:void(0)" class="open">导航1</a>
+            <a href="javascript:void(0)">导航2</a>
+            <a href="javascript:void(0)">导航3</a>
+            <a href="javascript:void(0)">导航4</a>
+            <a href="javascript:void(0)">导航5</a>
+        </div>
+        <!--选项卡内容-->
+        <div class="tabs-content">
+            <div class="item open">内容1</div>
+            <div class="item">内容2</div>
+            <div class="item">内容3</div>
+            <div class="item">内容4</div>
+            <div class="item">内容5</div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    $(".tabs-nav a").hover(function(){
+        $(this).addClass("open").siblings().removeClass("open");
+        var index = $(this).index();
+        $(".tabs-content").stop().animate({
+            left:-(index * 500)
+        },500)
+    })
+</script>
+</body>
+</html>

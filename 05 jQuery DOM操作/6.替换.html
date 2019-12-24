@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+
+        .container div{
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>replaceWith替换</button>
+<button>replaceAll替换</button>
+
+<p>哈哈哈啊哈啊</p>
+<p>哈哈哈啊哈啊</p>
+<p>哈哈哈啊哈啊</p>
+<p>哈哈哈啊哈啊</p>
+
+<a href="#">百度</a>
+
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+
+    //replaceWith() 方法 ,将匹配元素 ,使用指定的元素内容替换
+    $("button:first").click(function(){
+        $("p").replaceWith("<h1>教育改变生活!</h1>");
+    })
+
+
+    //replaceAll() 方法 ,用指定元素(可以使用选择器) 替换掉匹配需要被替换的元素
+    $("button:last").click(function(){
+        // $("<h1>教育改变生活!</h1>").replaceAll("p");
+        $("a").replaceAll("p");
+    })
+</script>
+</body>
+</html>

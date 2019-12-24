@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            padding: 20px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+
+        .result{
+            width: 500px;
+            margin: 30px auto;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div> <input type="text" id="tel"> <button id="query">查询</button></div>
+        <div class="result">
+            归属地: 广东深圳联通
+        </div>
+    </div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script>
+        //接口地址 : http://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=15850781443
+        var API = 'http://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=';
+        //点击查询按钮  , 查询手机号码的归属地
+        $("#query").click(function () {
+            var tel = $("#tel").val();
+            //向对应的接口查询手机号码的信息
+            $.ajax({
+                url:API+tel,
+                method:"get",
+                dataType:'jsonp',
+                success:function(res){
+                    console.log(res);
+                    $(".result").html("归属地:"+res.carrier);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

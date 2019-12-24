@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //前瞻: 根据需要匹配字符的后边内容进行匹配
+
+    var str = 'hello how h3 are hi haha';
+    //需求: 替换掉后面紧接着数字的h
+    str.replace(/h(?=\d)/g,'*'); // 正前瞻  "hello how *3 are hi haha"
+
+    //需求:替换后面不是接数字的h
+    str.replace(/h(?!\d)/g,'*');// 负前瞻 "*ello *ow h3 are *i *a*a"
+
+</script>
+</body>
+</html>

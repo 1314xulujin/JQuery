@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 400px;
+            border:1px solid red;
+            margin: 50px auto;
+        }
+        #loading{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,.5) url("images/ajax-loader.gif") no-repeat center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button>获取数据</button>
+<div id="box">
+
+</div>
+<div id="loading"></div>
+<script src="js/jquery-v1.12.0.min.js"></script>
+<script>
+    //需求: 点击按钮 ,请求后端数据 ,并显示到box
+    $("button").click(function(){
+        console.log("开始请求数据....");
+       $.ajax({
+           // url:"/api?name=张三&age=20&sex=女",
+           url:"/api",
+           // data:'name=张三&age=20&sex=女', //jQuery 会根据请求类型为get ,处理data中的数据 ,使用查询字符串的形式传递参数
+           data:{ //jQuery 会检测data属性值是否为对象 ,如果是会自动转换成查询字符串
+               name:"张三",
+               sex:"男",
+               age:20
+           },
+           success:function (res) {
+               console.log(res);
+           }
+       })
+    })
+
+</script>
+</body>
+</html>

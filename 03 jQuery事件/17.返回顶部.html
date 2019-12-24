@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .toTop{
+            position: fixed;
+            right: 10px;
+            bottom: 100px;
+            width: 40px;
+            height: 40px;
+            background: red;
+            color: #fff;
+            text-align: center;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        .box{
+            width: 100%;
+            height: 6000px;
+            background: linear-gradient(0deg,red,green);
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="toTop">返回顶部</div>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    $(window).scroll(function(){
+       console.log($(this).scrollTop());
+    })
+
+
+    $(".toTop").click(function(){
+        // $(window).scrollTop(0);
+
+        $("html,body").animate({
+            scrollTop:0
+        },1500);
+    })
+</script>
+</body>
+</html>

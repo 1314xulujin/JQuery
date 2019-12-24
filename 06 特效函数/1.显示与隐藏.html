@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>显示/隐藏</button>
+    <div id="box"></div>
+<script src="../js/jquery-v1.12.0.js"></script>
+    <script>
+        //所有的特效函数 ,都可以设置一个速度(speed) , 回调函数 (callback)
+        // show(speed,callback)  /  hide(speed,callback)  / toggle(speed,callback)
+        //speed : 特效执行的时间
+        //callback: 当特效执行完之后调用的函数
+
+        $("button:first").click(function () {
+            $("#box").show(300,function(){
+                alert('已经完全显示!');
+            });
+        })
+
+        $("button:eq(1)").click(function () {
+            $("#box").hide(300,function () {
+                alert('已经隐藏完毕!');
+            });
+        })
+
+        $("button:last").click(function () {
+            $("#box").toggle();
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>开始动画</button>
+
+<button>stop()</button>
+<button>stop(true)</button>
+<button>stop(true,true)</button>
+<button>stop(false,true)</button>
+
+<div class="box"></div>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script src="../js/jquery.easing.min.js"></script>
+<script>
+    //停止动画 stop()
+
+    //stop() :立即停止当前队列动画,进入下一队列动画
+    $("button:eq(1)").click(function(){
+          $(".box").stop();
+    })
+
+    //stop(true) :立即停止所有队列动画,保留在当前位置
+    $("button:eq(2)").click(function(){
+        $(".box").stop(true);
+    })
+
+    //stop(true,true):立即停止所有队列动画 ,保留在当前动画的最终状态
+    $("button:eq(3)").click(function(){
+        $(".box").stop(true,true);
+    })
+
+    //stop(false,true) : 立即停止当前队列动画,并且从当前动画的最终状态开始 ,进入下一队列动画
+    $("button:eq(4)").click(function(){
+        $(".box").stop(false,true);
+    })
+
+    //简化版的队列动画 (挨个逐一执行)
+    $("button:first").click(function(){
+        $(".box")
+            .animate({left:1340},5000).delay(0)
+            .animate({left:0,top:600},5000)
+            .animate({left:1340},5000)
+    })
+
+</script>
+</body>
+</html>

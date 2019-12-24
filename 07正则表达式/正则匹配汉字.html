@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //匹配注册的昵称  6 - 10
+    //unicode 编码 国际语言字符统一编码
+    // \u4E00(19968)  -  \u9FA5  (40869)
+    // \u  代表 unicode编码  4E00  编码库中的编码字符的索引位置 的十六进制  = > 19968
+
+    var str = 's你是s我的a眼啊';
+    var reg = /^[\u4E00-\u9FA5\w-]{6,10}$/gi;
+    console.log(reg.test(str));
+
+</script>
+</body>
+</html>

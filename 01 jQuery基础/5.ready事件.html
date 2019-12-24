@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    //onload 事件: 页面加载(静态资源文件,图片...)完毕之后触发的事件 (只能触发一次)
+    window.onload = function(){
+        alert('网页加载完毕!1');
+    }
+
+    // window.onload = function(){
+    //     alert('网页加载完毕!2');
+    // }
+
+    //ready() 事件:页面文档结构(html)加载完毕触发 (不包括图片等资源) - 支持多次
+    jQuery(document).ready(function () {
+        alert('页面加载完毕!1');
+    })
+
+    $(document).ready(function () {
+        alert('页面加载完毕!2');
+    })
+    //简写
+    $(function(){
+        alert('页面加载完毕!3');
+    })
+
+
+</script>
+</body>
+</html>

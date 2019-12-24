@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            position: absolute;
+            top: 2000px;
+            left: 0px;
+            width: 1000px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script>
+        //offset() 返回元素的偏移距离(对象= left / top 值)
+        //相对于页面的顶部和左边 为参照的偏移距离
+
+        console.log($(".box").offset().top);
+    </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+.bg1{  background-image: url("../images/1.jpg");
+}
+.bg2{
+    background-image: url("../images/2.jpg");
+}
+.bg3{
+    background-image: url("../images/3.jpg");
+}
+.bg4{
+    background-image: url("../images/4.jpg");
+}
+.bg5{
+    background-image: url("../images/5.jpg");
+}
+.bg6{
+    background-image: url("../images/6.jpg");
+}
+.bg7{
+    background-image: url("../images/7.jpg");
+}
+
+/*首页样式*/
+.title{
+    text-align: center;
+    margin: 50px auto;
+    font-size: 32px;
+    /*设置字体间距*/
+    letter-spacing: 5px;
+}
+.main{
+    width: 500px;
+    margin: 100px auto;
+	/*border:1px solid #ccc;*/
+}
+
+.main a,#gameInfo .close{
+    display: block;
+    width: 150px;
+    height: 40px;
+    border: 2px #75db31 solid;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 40px;
+	
+    /*css3 背景渐变*/
+    background-image: linear-gradient(180deg,#eef8e8,#67c330);
+
+    /*css3 盒子阴影
+        第一个 0: 阴影的水平(X 轴)偏移位置
+        第二个 0: 阴影的水平(y 轴)偏移位置
+        第三个 0: 阴影的模糊程度
+        第四个 2: 阴影的大小
+        第五个 #fff: 阴影的颜色
+        第六个 inset: 阴影的方向( 内 inset  /  外阴影)
+    */
+    box-shadow: 0px 0 0px 2px #fff inset;
+    color: #000;
+    font-size: 18px;
+    margin: 50px 0;
+}
+.main a:hover {
+    border-color: #afeb85;
+    background: linear-gradient(180deg,#fff,#afeb85);
+}
+
+#mask{
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+}
+
+#gameInfo{
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    margin-left: -260px;
+    margin-top: -270px;
+    width: 480px;
+    height: 500px;
+    padding: 20px;
+    background: #fff;
+    display: none;
+}
+
+#gameInfo p{
+    height: 400px;
+    overflow: auto;
+    line-height: 26px;
+}
+
+#gameInfo .close{
+    margin: 50px auto;
+    border-color: #3d92b6;
+    background: linear-gradient(180deg,#ecf6f9,#59acd0);
+}
+
+#gameInfo .close:hover{
+    border-color: #6fb4d0;
+    background: linear-gradient(180deg,#fff,#97cbe1);
+}
+
+/*游戏页面样式*/
+.play-title{
+    text-align: center;
+    margin: 20px auto;
+}
+
+#level{
+    padding: 6px 40px;
+    border-radius: 8px;
+    font-size: 20px;
+    margin-left: 25px;
+    border: 1px #666 solid;
+    background: rgba(255,255,255,0.8);
+}
+
+.play-title a{
+    display: inline-block;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #000;
+    border: 1px #ee7700 solid;
+    text-decoration: none;
+    border-radius: 18px;
+    box-shadow: 0 0 0 3px #feb367;
+    background: linear-gradient(to bottom right,#fff,#feb367);
+    margin-left: 20px;
+}
+
+#play{
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: 105px;
+    background: url("../images/btn-bg.png");
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+}
+/*按钮按下样式*/
+#play.down{
+    background-image: url("../images/btn-bg-click.png");
+}
+
+.container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+}
+
+.man{
+    position: absolute;
+    bottom: 100%;
+    left: 50px;
+    transition:bottom 0.85s,transform 0.85s;
+}
+
+.man.down{
+    bottom: -10%;
+    transform: rotate(990deg);
+}
+
+.man img{
+    display: block;
+}
+
+.stick{
+    position: absolute;
+    left: 100px;
+    bottom: 100%;
+    height: 5px;
+    width: 0px;
+    background: #2AAD6F;
+    /*设置旋转中心点*/
+    transform-origin: left 100%;
+    /*css3 旋转样式*/
+    transform: rotate(-90deg);
+    /*css3 过渡动画效果*/
+    transition: transform 0.5s;
+}
+
+.stick.down{
+    /*css3 旋转样式*/
+    transform: rotate(0deg);
+}
+.wall-box{
+    position: absolute;
+    left: 0;
+    height: 100%;
+}
+
+.wall-box .wall{
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: #000;
+}
+
+#dialog{
+    position: fixed;
+    width: 480px;
+    left: 50%;
+    margin-left: -240px;
+    top: 250px;
+    padding-bottom: 25px;
+    background: #3d3d3d;
+    z-index: 999;
+    box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+    display: none;
+}
+
+#dialog p {
+    padding: 0 20px;
+    color: #fff;
+    font-size: 24px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+#dialog p.dialog-btn {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 60px;
+}
+.dialog-btn a {
+    display: inline-block;
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    color: #000;
+    background: #cccdcd;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0 10px;
+}

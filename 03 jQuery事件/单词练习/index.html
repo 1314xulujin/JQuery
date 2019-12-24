@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .container{
+                width: 1200px;
+                margin: 50px auto;
+                border: 1px solid #ccc;
+                padding: 20px;
+            }
+
+            .results,.words{
+                margin: 50px;
+                text-align: center;
+            }
+
+          .results span{
+            display: inline-block;
+            width: 30px;
+            height: 40px;
+            padding: 5px 6px;
+            margin: 0 5px;
+            font-size: 40px;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+
+        }
+        .words button{
+            display: inline-block;
+            padding: 5px 6px;
+            font-size: 40px;
+            font-weight: bold;
+            background: #089efd;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .words button[disabled]{
+            background: #eee;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="results"></div>
+        <div class="words"></div>
+    </div>
+    <script src="js/jquery-v1.12.0.js"></script>
+    <script>
+        /*
+        *   需求:
+        *       1.实现数据灵活 , 可以使用模拟数据暂时替代
+        *       2.实现单词拆解单个字符 ,并且随机排序
+        *
+        *       3.控制键盘的按键(只允许指定的输入按键有效)
+        *       4.输入完可以通过空格进入下一个单词 ,检测是否正确
+        * */
+        var data = ['hello','container','hidden','bottom','center']; // 模拟数据 (用于真实数据后可以实现无缝对接)
+        var index = 0;//当前单词索引值
+        var newArr = [] ; //生成后的随机排序的数组
+        var results = [];//用户输入的数组
+
+
+        //定义一个用于单词拆解 , 并且随机排序方法
+        function createNewArr (index){
+            var tmp = data[index].toLowerCase().split('');
+            tmp.sort(function () {
+                return Math.random() - 0.5;
+            })
+            console.log(tmp);
+            renderNewArr(tmp);
+            return tmp;
+        }
+
+        newArr = createNewArr(index);
+
+        //定义一个渲染随机单词的方法
+        function renderNewArr(arr) {
+            var htmlStr = '';
+            var htmlStr2 = '';
+            //$.each()
+            $.each(arr,function (index,item) {
+                  // console.log(index,this);
+                htmlStr+='<button>'+item+'</button>';
+                htmlStr2+='<span></span>';
+            })
+            //插入到 html() ==  innerHTML
+            $(".words").html(htmlStr);
+            $(".results").html(htmlStr2);
+        }
+
+        //绑定键盘事件
+        window.onkeydown = function (e) {
+            // console.log(e);
+            if (isValid(e.key,newArr)){
+                console.log('这是一个有效的按键.');
+                results.push(e.key);
+                //将输入的内容插入到对应的结构span
+                $(".results span").eq(results.length - 1).html(e.key);
+                //禁用当前已经用过的字符按钮
+                $('.words button:not(":disabled"):contains("'+e.key+'")')[0].disabled = true;
+
+            }else{
+                console.log('无效按键.');
+            }
+        }
+
+        //定义一个方法,用于检测是否有效按键
+        function isValid(key,newArr) {//key ,当前按键的字符 , newArr 随机生成的数组
+            var index = newArr.indexOf(key);
+            if (index>-1){
+                newArr.splice(index,1);
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

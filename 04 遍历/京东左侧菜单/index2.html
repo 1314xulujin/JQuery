@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style>
+        /**去除所有标签内\外边距**/
+        *{
+            padding:0;
+            margin:0;
+        }
+        /**去除所有的列表样式**/
+        ul{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+            font-size:12px;
+            color:#fff;
+        }
+
+        .container{
+            position: relative;
+            width:200px;
+            margin: 50px 100px;
+        }
+        .title{
+            font-weight:normal;
+            background-color:#b1191a;
+            color:#fff;
+            line-height:35px;
+            height:35px;
+            font-size:16px;
+            text-indent:10px;
+        }
+        .navmenu li{
+            background-color:#c81623;
+            color:#fff;
+            text-indent:10px;
+            line-height:25px;
+            background-repeat:no-repeat;
+            background-position:180px;
+        }
+        .navmenu li:hover{
+            background: orange;
+        }
+        .navmenu li:hover .item{
+            display: block;
+        }
+        .navmenu .item{
+            position: absolute;
+            left: 200px;
+            top: 0;
+            text-indent: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h3 class="title">全部商品分类</h3>
+    <ul class="navmenu">
+        <li>
+            <a href="">家用电器</a>
+            <div class="item">
+                <img src="images/erji.png" alt="">
+            </div>
+        </li>
+        <li>
+            <a href="">手机</a>、<a href="">数码</a>、<a href="">京东通信</a>
+            <div class="item">
+                <img src="images/erji1.png" alt="">
+            </div>
+        </li>
+        <li>
+            <a href="">电脑</a>、<a href="">办公</a>
+            <div class="item">
+                <img src="images/erji2.png" alt="">
+            </div>
+        </li>
+        <li>
+            <a href="">家居</a>、<a href="">家具</a>、<a href="">家装</a>、<a href="">厨具</a>
+            <div class="item">
+                <img src="images/erji1.png" alt="">
+            </div>
+        </li>
+        <li>
+            <a href="">男装</a>、<a href="">女装</a>、<a href="">珠宝</a>
+            <div class="item">
+                <img src="images/erji2.png" alt="">
+            </div>
+        </li>
+        <li>
+            <a href="">个护化妆</a>
+            <div class="item">
+                <img src="images/erji.png" alt="">
+            </div>
+        </li>
+        <li>
+            <a href="">鞋靴</a>、<a href="">箱包</a>、<a href="">钟表</a>、<a href="">奢侈品</a>
+            <div class="item">
+                <img src="images/erji1.png" alt="">
+            </div>
+        </li>
+        <li>
+            <a href="">运动户外</a>
+            <div class="item">
+                <img src="images/erji2.png" alt="">
+            </div>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-v1.12.0.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

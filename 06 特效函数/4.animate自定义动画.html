@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button>开始动画</button>
+    <div class="box"></div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script>
+        /*
+        * jQuery 动画的原理 :
+        *   通过js的dom操作 ,配合定时器 ,按一定时间间隔不断修改元素样式(样式属性值的递增/递减) ,达到动画效果
+        *
+        *   注意:在jQuery中 ,只有样式属性值为数值类型的属性 ,才可以使用在动画中.
+        *          width / height / margin / padding / left / top / .... / font-size
+        *
+        *   animate(params , speed , [easing] ,[callback])
+        *       [必须]params : 动画下一个过程状态的css样式属性(动画效果的css样式) = > 对象方式(json对象)
+        *       [必须]speed : 动画从当前状态开始, 直至改变最终状态 ,所需要花费的时间
+        *       easing : 时间曲线(动画变化的速度) : 内置有两个 : linear(匀速) / 默认:swing(变速:慢->加速->慢)
+        *       callback : 动画执行完毕后的回调函数 (当动画已经执行完毕之后,需要做的事情)
+        *
+        *       可以使用官方提供的jquery.easing.js 插件扩展动画的速度:(30多个速度预设)
+        *       linear
+                swing
+                easeInQuad
+                easeOutQuad
+                easeInOutQuad
+                easeInCubic
+                easeOutCubic
+                easeInOutCubic
+                easeInQuart
+                easeOutQuart
+                easeInOutQuart
+                easeInQuint
+                easeOutQuint
+                easeInOutQuint
+                easeInExpo
+                easeOutExpo
+                easeInOutExpo
+                easeInSine
+                easeOutSine
+                easeInOutSine
+                easeInCirc
+                easeOutCirc
+                easeInOutCirc
+                easeInElastic
+                easeOutElastic
+                easeInOutElastic
+                easeInBack
+                easeOutBack
+                easeInOutBack
+                easeInBounce
+                easeOutBounce
+                easeInOutBounce
+        *
+        *
+        * */
+
+        // $("button").click(function(){
+        //     $(".box").animate({
+        //         left:1340
+        //     },5000,function(){
+        //         $(".box").animate({
+        //             left:0,
+        //             top:600
+        //         },5000,function(){
+        //             $(".box").animate({
+        //                 left:1340
+        //             },5000)
+        //         })
+        //     })
+        // })
+
+
+        //简化版的队列动画 (挨个逐一执行)
+        $("button").click(function(){
+            $(".box")
+                .animate({left:1340},5000,'easeInBounce').delay(0)
+                .animate({left:0,top:600},5000,'easeInBounce')
+                .animate({left:1340},5000)
+        })
+
+    </script>
+</body>
+</html>

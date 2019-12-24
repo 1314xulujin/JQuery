@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            border: 10px solid #ccc;
+            background-color: green;
+            padding: 50px;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script>
+        //width()  / height()  可以用于获取 或者设置元素的宽/高属性 (获取元素内容的宽度 ,不包括内外边距 ,边框等)
+        // var w = $(".box").width(); //获取宽度 = 内容
+
+
+        //innerWidth()  / innerHeight()
+        // var w = $(".box").innerWidth(); //获取宽度 = 内容 + 左右内边距
+
+        //outerWidth() / outerHeight()
+        // var w = $(".box").outerWidth();//获取宽度 = 内容 + 左右内边距 + 左右边框
+
+        //outerWidth(true) / outerHeight(true)
+        var w = $(".box").outerWidth(true); // 获取宽度 = 内容 + 左右内边距 + 左右边框 + 左右外边距
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 100%;
+    text-align: center;
+    margin-top:100px;
+}
+select{
+    width: 120px;
+    height: 35px;
+
+}
+label{
+    font-size: 16px;
+    margin: auto 10px;
+    color: black;
+}

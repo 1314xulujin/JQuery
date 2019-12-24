@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body onclick="alert('ssssss');">
+<a href="http://www.baidu.com">单击百度</a>
+<form action="http://www.baidu.com" >
+
+</form>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    //trigger () 模拟事件 , 会产生默认事件 及冒泡行为. / triggerHandler 不产生默认行为,及冒泡
+    $(window).keydown(function(){
+        console.log(123);
+        //模拟点击button
+        $("a").triggerHandler("click");  // a 标签的默认行为会被阻止
+        // $("form").triggerHandler("submit");
+    })
+
+    // $("a").click(function(){
+    //     alert('a被单击了!');
+    // })
+</script>
+</body>
+</html>

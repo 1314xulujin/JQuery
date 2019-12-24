@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+         <div id="box2">
+             <p>哈哈哈哈哈啊啊啊啊哈啊</p>
+         </div>
+    </div>
+    <script src="../js/jquery-v1.12.0.js"></script>
+    <script>
+            //遍历前辈元素 : 遍历当前元素的父级 与 组先级元素
+
+        //1.parent() 返回当前元素的直接父元素
+        //    console.log($("p").parent()) ;
+
+        //2.parents() 返回当前元素的所有的祖先级元素 , 一直遍历到网页的文档根部(html)
+        //     console.log($("p").parents()) ;
+            console.log($("p").parents("#box")) ;
+    </script>
+</body>
+</html>

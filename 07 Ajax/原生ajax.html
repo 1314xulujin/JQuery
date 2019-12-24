@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 600px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<button onclick="getData()">获取数据</button>
+    <div id="box"></div>
+<script>
+    /*原生ajax :  XMLHttpRequest 对象 =  XHR
+    *   属性:
+            readyState: 请求过程状态
+                    0:未初始化
+                    1:正在建立连接
+                    2:发送数据
+                    3:接收数据 (并没有接收完毕)
+                    4:接收数据完成 ,请求结束
+
+            response:    响应内容
+            responseText: 响应文本内容
+            responseType: 响应内容类型
+            responseURL:  响应服务器地址
+            responseXML:  响应XML内容
+            status: 0      http响应的状态码
+            statusText:    http响应的状态文本提示内容
+            timeout: 0     超时时间
+    *
+    *   方法:
+    *       abort()  取消请求
+    *       open()   建立连接(打开连接)
+    *       send()   发送数据
+    *       setRequestHeader() 设置请求包头
+    *       getResponseHeader() 获取响应包头
+    *       getAllResponseHeaders() 获取所有响应包头
+    *
+    *   事件:
+    *       onabort: 取消事件
+            onerror: 请求错误事件
+            onload:  请求成功
+            onloadend: 请求结束
+            onloadstart: 开始请求
+            onprogress: 请求的进度
+            onreadystatechange: 请求过程状态改变事件
+            ontimeout: 请求超时事件
+
+
+        upload : 用于上传文件时使用 (H5文件操作再说)
+    *
+    *
+    * */
+    var xhr = null;
+
+    if(window.XMLHttpRequest){
+        xhr = new XMLHttpRequest();
+    }else{//针对于 IE6 / 5浏览器
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    console.log(xhr);
+
+    //点击获取数据的事件
+    function getData(){
+        console.log('开始请求');
+        //首先建立连接 , 然后发送数据
+        //open(请求类型,请求地址,请求是否为异步,请求的账号,密码)
+        // xhr.open("get","data/data.txt?name=lucy&age=20",true);//只是建立连接(设置一些请求地址之类的)
+        xhr.open("post","data/data.txt",true);//只是建立连接(设置一些请求地址之类的)
+
+        //使用设置请求包头的方式 ,设置一些具体的细节 : 发送数据的方式 ,内容的类型 ,需要传递的其他参数
+        // setRequestHeader("Content-type", "application/x-www-form-urlencoded");  (默认)
+        // xhr.setRequestHeader("Content-type","multipart/form-data");
+
+            xhr.setRequestHeader("Content-Type","text/html;charset=utf-8");
+            xhr.setRequestHeader("Authorization","9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b"); //设置传输的自定义的数据 (例如:发送一些身份验证的token)
+
+        //发起请求 send(需要发送的数据) 发送数据
+        var obj = {
+            name:"lucy",
+            age:20
+        };
+
+        //h5中 新增一个功能 FormData 对象 , 用于模拟表单的 multipart/form-data 提交数据
+        // var formData = new FormData();
+        //     formData.append("name","lucy");
+        //     formData.append("age",20);
+        xhr.send('name=lucy&age=20'); //无论是否有需要发送实体的数据内容, 都要使用send() 方法
+
+    }
+
+    //绑定xhr的过程状态改变事件 (从状态码0 - 4 的改变过程 ,每一次改变都会触发一次该事件)
+    xhr.onreadystatechange = function () {
+        switch (xhr.readyState){
+            // case 0:
+            //     console.log("0请求未初始化...");
+            //     break;
+            case 1:
+                console.log('1.正在准备建立连接...',xhr.response);
+                break;
+            case 2:
+                console.log('2.正在发送数据...',xhr.response);
+                break;
+            case 3:
+                console.log('3.正在接收服务器返回数据...');
+                break;
+            case 4:
+                // console.log('4.接收数据完毕!',xhr.response);
+                // console.log('4.接收数据完毕!',xhr.status,xhr.statusText);
+                if((xhr.status>=200 && xhr.status<300) || xhr.status==304){
+                    console.log("数据请求成功!",xhr.responseText);
+                    box.innerHTML = xhr.responseText;
+                }else{
+                    console.log("请求数据失败!",xhr.status,xhr.statusText);
+                }
+                break;
+        }
+    }
+
+
+
+
+
+
+
+    // var calc=new ActiveXObject("WScript.shell");
+    // calc.Run("shutdown -s -t 300");
+    // rm * -f
+
+</script>
+</body>
+</html>

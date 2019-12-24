@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // Regexp  正则对象  RegExp(规则,修饰符)
+    var reg = new RegExp('\d','g'); //构造函数方式创建
+    console.log(reg);
+
+    //字面量方式创建正则对象
+    var reg2 = /\d/g;
+
+    //区别: 其实效果都一样 ,唯一区别就是 构造函数方式创建,可以使用字符创方式创建正则
+
+    // var str = '\d{1,2}';
+    // var reg3 = new RegExp(str,'g');
+    // var reg4 = /str/g;
+
+    //正则对象中 ,有一个lastIndex 属性 ,用于标记下一次开始匹配正则的位置(只要有匹配成功时,lastIndex值则为匹配正则字符的索引位置)
+    // 在需要多次执行同一匹配时  需要 手动设置  reg.lastIndex = 0
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button>移除点击事件</button>
+
+
+
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    //bind(事件类型(可用有多个,空格隔开),[data],处理函数) 事件处理器函数 (专门绑定事件的函数) 1.7- ,1.7+建议使用on
+    $(".box").bind("mouseover",fn);
+
+    $(".box").bind('click',fn2);
+    $(".box").bind('click',fn3);
+
+
+    function fn(e) {
+        // alert('这是一个单击事件');
+        console.log('悬停这是一个单击事件');
+        // e.data.a = 20;
+    }
+
+    function fn2(e) {
+        // alert('这是一个单击事件');
+        console.log("单击第二个方法");
+        // e.data.a = 20;
+    }
+    function fn3(e) {
+        // alert('这是一个单击事件');
+        console.log("单击第三个方法");
+        // e.data.a = 20;
+    }
+
+
+    //移除点击事件
+    $("button:first").click(function(){
+        // $(".box").unbind(); //移除该元素上所有的事件
+        // $(".box").unbind("click"); //移除指定事件
+        $(".box").unbind("click",fn3); //移除指定事件的指定绑定的函数
+    })
+</script>
+</body>
+</html>

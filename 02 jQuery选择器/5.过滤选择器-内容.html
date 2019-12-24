@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>教育改变生活111</p>
+        <p><span>教育改变生活2222</span></p>
+    </div>
+<hr>
+    <p>您好家居安静安静嗷嗷叫啊啊</p>
+    <p>安达市多多大多大大奥撒群翁无</p>
+    <p>sdddddsdsdassasddadsasasadasdda</p>
+    <p>sdddddsdsdass您好dsasasadasdda</p>
+    <p></p>
+    <p>sdddddsdsdass您好dsasasadasdda</p>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    // var p = document.getElementsByTagName("p");
+    //
+    // var re = [];
+    // for(var i=0;i<p.length;i++){
+    //     if(p[i].innerText.indexOf("您好")>=0){
+    //         re.push(p[i]);
+    //     }
+    // }
+
+    $(function () {
+        //26. :contains(text) 从匹配元素中 ,选取包含内容文本为text 元素
+        // $("p:contains('您好')").css("color","red");
+
+        //27. :empty 从匹配元素中 ,选取没有子元素,或者元素内容为空的元素
+        // $("p:empty").css({
+        //     border:"1px solid red",
+        //     padding:50
+        // })
+
+        //28. :parent 从匹配元素中,选取包含子元素 ,或者元素内容不为空的元素
+        $("p:parent").css({
+            border:"1px solid red",
+            padding:50
+        })
+
+        //29. :has(selector) 从匹配元素中,选取具有selector选择器匹配内容的元素
+
+        $("#box p:has(span)").css("color","red");
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<select name="" id="">
+    <option value="bj">北京</option>
+    <option value="sh" selected>上海</option>
+    <option value="gz">广州</option>
+    <option value="szx">深圳</option>
+</select>
+<input type="text" disabled>
+    <div>
+        <input type="radio" name="sex"checked  value="男">男
+        <input type="radio" name="sex" value="女">女
+    </div>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    $(function () {
+        //47. :checked 从匹配元素中 , 获取已经被选中的 单选 / 多选元素
+        // alert($(":radio:checked")[0].value)
+
+        //48. :selected 从匹配元素中 ,获取预计被选中的 option 元素
+        alert($("select :selected")[0].value);
+
+        //49.  :enabled 从匹配元素中  获取所有可用的表单元素
+        //     $("input:enabled").css("border","1px solid red");
+
+        //50. :disabled 从匹配元素中 获取所有不可用的表单元素
+             $("input:disabled").css("border","1px solid red");
+
+        //51. :not() 一切选择器的否定 , 取所有选择器的相反值 (慎用)
+        $(":not(:header)").css("color","red");
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button>移除点击事件</button>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+      //one(事件类型,[数据],函数) 只绑定一次事件,触发完之后移除了
+        $(".box").one("click",function(){
+            alert(1213513135);
+        })
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>点击按钮</button>
+<div class="box"></div>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    //trigger () 模拟事件 , 会产生默认事件 及冒泡行为. / triggerHandler 不产生默认行为,及冒泡
+    // $(window).keydown(function(){
+    //     console.log(123);
+    //     //模拟点击button
+    //     $("button").trigger("click");
+    // })
+    //
+    // $("button").click(function(){
+    //     $(".box").toggle(400);
+    //     console.log("按钮的单击事件")
+    // })
+
+    //自定义事件 , 使用on 绑定一个自定义事件 让事件更具有语义化,一看事件就知道业务操作的目的
+    $(".box").on("login",function(){
+        alert("触发了box的hello事件!");
+    })
+
+
+    $(window).keydown(function(){
+        $(".box").trigger("login");
+    })
+</script>
+</body>
+</html>

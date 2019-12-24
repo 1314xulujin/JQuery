@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">哈哈哈哈</div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script>
+        //使用原生js获取
+        var box = document.getElementById("box"); //DOM对象:可以使用DOM对象中提供的方法和属性
+
+        // box.css('color','red');  // 报错 ,没有css方法
+        // $(box).css('color','red');  // box 已经转变成jQuery对象
+
+        //使用jQuery 获取
+        var box2 = $("#box"); //jQuery 对象 : 可以使用jQuery对象中提供的属性和方法
+          //  box2.style.color="red"; //报错  ,没有style属性
+          // box2[0].style.color="red"; // jQuery对象转成DOM对象
+          box2.get(0).style.color="red"; // jQuery对象转成DOM对象
+
+        //回顾: 不同的对象 会有不同的属性及方法 . 例如: 字符串对象有字符串的方法,数组有数组的方法
+        //所谓的jQuery对象 其实就是通过jQuery包装过的DOM对象的集合.
+
+        // jQuery 对象   < === >  DOM对象
+        //1.DOM对象转jQuery对象 : 直接使用$(DOM对象) 即可
+
+
+        //2.jQuery对象转DOM 对象  => 直接使用数组下标  , 也可以使用get(0) 获取
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var api = 'http://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=';
+    function jsonp(){
+        var callback = 'abc'+ new Date().getTime();
+        window[callback] = function(data){
+            console.log(data);
+            document.head.removeChild(document.getElementById(callback));
+        }
+        var script = document.createElement("script");
+            script.src = api+tel+"&callback="+callback;
+            script.id = callback;
+        document.head.appendChild(script);
+            console.log(script);
+    }
+    var tel = 13800138000;
+
+    jsonp()
+</script>
+</body>
+</html>

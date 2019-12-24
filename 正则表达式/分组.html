@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //分组 = > () 括起来的规则 = > $1 表示第一组匹配到的内容
+    //分组功能非常强大 ,常用于一些框架模板引擎
+    var tel = '13800138000';
+    console.log(tel.replace(/^(1[3-9]\d)\d{4}(\d{4})$/,'$1****$2'));
+
+    var html = '<img src="http://abc.com/a.jpg"/>'; //需求: 从html 中取出图片的地址
+    console.log(html.replace(/<img\ssrc="(.*)"\/>/,'$1'));
+
+</script>
+</body>
+</html>

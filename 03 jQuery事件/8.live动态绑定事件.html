@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button id="add">添加一个按钮</button>
+    <div class="box">
+         <button>按钮</button>
+         <button>按钮</button>
+         <button>按钮</button>
+         <button>按钮</button>
+    </div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <!--<script src="../js/jquery-1.8.3.min.js"></script>-->
+    <script>
+        //使用live()动态绑定事件 (1.10.0 左右 以后就已经删除 ,不能使用了!)
+        $(".box button").live("click",function () {
+            alert("这是一个单击事件!");
+        })
+
+        //增加一个按钮
+        $("#add").click(function(){
+            $(".box").append($("<button>新增按钮</button>"));
+        })
+    </script>
+</body>
+</html>

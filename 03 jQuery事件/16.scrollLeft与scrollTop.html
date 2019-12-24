@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+            border: 1px solid red;
+            overflow: auto;
+        }
+
+        .container .box{
+            width: 3000px;
+            height: 3000px;
+            background: linear-gradient(90deg,red,green);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    //scrollLeft() 获取或者 设置 水平方向的滚动距离
+    console.log($(".container").scrollLeft());
+
+    //scrollTop() 获取或者设置垂直方向的滚动距离
+    $(".container").scrollTop()
+
+</script>
+</body>
+</html>

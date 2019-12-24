@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <p>这是一个p标签11111</p>
+        </div>
+        <div>
+            <p>这是一个p标签22222222</p>
+            <p>这是一个p标签22222222</p>
+        </div>
+    </div>
+<hr>
+    <ul>
+        <li>这是列表项1</li>
+        <li>这是列表项2</li>
+        <li>这是列表项3</li>
+        <li>这是列表项4</li>
+        <li>这是列表项5</li>
+        <li>这是列表项6</li>
+        <li>这是列表项7</li>
+        <li>这是列表项8</li>
+        <li>这是列表项9</li>
+        <li>这是列表项10</li>
+    </ul>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    $(function () {
+        //css3 选择器
+        //32. :first-child 从匹配元素中 ,选取出第一个子元素
+        // $("ul li:first-child").css("color","red");
+
+        //33. :last-child 从匹配元素中 ,选取出最后个子元素
+        // $("ul li:last-child").css("color","red");
+
+        //34. :nth-child(index) 从匹配元素中,选取索引值index位置元素 ,css中的索引值从1开始
+        // $("ul li:nth-child(1)").css("color","red");
+
+        //35. :only-child 从匹配元素中 ,选取该元素是父元素中唯一一个子元素的元素
+        $("#box div p:only-child").css("color","red");
+    })
+</script>
+</body>
+</html>

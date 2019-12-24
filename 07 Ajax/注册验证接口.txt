@@ -1,0 +1,23 @@
+查看已注册用户列表页:http://class4/
+
+校验用户账户唯一性接口:
+	http://class4/checkUser
+		输入参数:UserName
+		请求类型:get
+		返回:
+			code 状态码
+			msg 提示
+			data: 返回推荐注册账号列表
+
+提交注册接口:
+	http://class4/register
+		输入参数:
+		USER_NAME
+		USER_NICK
+		USER_PASSWORD
+		
+		请求类型:post
+		返回:
+			code 状态码
+			msg 提示
+	

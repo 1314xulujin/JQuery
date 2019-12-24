@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+
+        .container div{
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+        <p>这是一个独立的p</p>
+</div>
+
+<button>wrap()</button>
+<button>wrapAll()</button>
+<button>wrapInner()</button>
+
+<p>哈哈哈啊哈啊</p>
+<p>哈哈哈啊哈啊</p>
+<p>哈哈哈啊哈啊</p>
+<p>哈哈哈啊哈啊</p>
+
+<a href="#">百度</a>
+
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+
+    //wrap() 方法 ,将匹配元素 ,使用指定的元素包裹
+    $("button:first").click(function(){
+        $("p").wrap("<div></div>");
+    })
+
+    //wrapAll() 方法 ,将匹配元素 ,使用指定的元素包裹 (打包在匹配的第一个元素位置)
+    $("button:eq(1)").click(function(){
+        $("p").wrapAll("<div></div>");
+    })
+
+    //wrapInner() 方法 ,将匹配元素 ,使用指定的元素包裹 (打包在匹配的第一个元素位置)
+    $("button:eq(2)").click(function(){
+        $("p").wrapInner("<div></div>");
+    })
+
+</script>
+</body>
+</html>

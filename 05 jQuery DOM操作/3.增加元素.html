@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 500px;
+            border:1px solid red;
+            margin: 50px auto;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        .sheep{
+            height: 100px;
+            width: 200px;
+            background: green;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!--前边 : before-->
+    <div class="container">
+    <!--开头-->
+        <hr>
+        <div class="sheep">羊羊羊</div>
+    <!--末尾处-->
+    </div>
+    <!--后边 : after-->
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    var box = $('<div class="box">教育改变生活!</div>');//使用jQuery创建元素节点
+
+    // ----------------------------内部操作-------------------------------
+
+    //1.append() 在指定元素的末尾处追加内容
+    // $(".container").append(box);
+
+    //2.appendTo() 将匹配内容追加到指定的元素末尾处 (类似于剪切效果)
+    //    $(".sheep").appendTo(".container");
+
+
+    //3.prepend() 在指定元素的开头未知追加内容
+    // $(".container").prepend(box);
+
+    //4.prependTo() 将匹配内容追加到指定的元素开头位置 (类似于剪切效果)
+    // $(".sheep").prependTo(".container");
+
+    // -------------------------------外部操作--------------------------------------------
+
+    //5.after() 在指定元素的后边追加内容 (外部)
+    //   $(".container").after(box);
+
+    //6.insertAfter() 将匹配元素追加到指定元素的后边 (类似于剪切效果)
+    // $(".sheep").insertAfter(".container");
+
+    //7.before() 在指定元素的前边追加内容 (外部)
+    // $(".container").before(box);
+
+    //8.insertBefore() 将匹配元素追加到指定元素的前边 (类似于剪切效果)
+    $(".sheep").insertBefore(".container");
+
+</script>
+</body>
+</html>

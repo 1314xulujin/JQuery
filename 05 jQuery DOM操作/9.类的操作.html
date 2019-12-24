@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+
+        .container div{
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>类操作</button>
+
+<a href="http://www.baidu.com" title="这是一个标题" class="abc ssss hhhh">百度</a>
+
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+
+    //类的操作方法 ,获取或者设置匹配元素的class属性
+    $("button:first").click(function(){
+         // alert($("a").attr("class"));
+
+        //addClass() 追加类
+        // $("a").addClass("ssss hhhhh");
+
+        //removeClass() 删除类
+        // $("a").removeClass("abc ssss");
+
+        //toggleClass() 切换类: 如果有则删除, 如果没有则添加
+        $("a").toggleClass("aaaaa");
+    })
+
+
+</script>
+</body>
+</html>

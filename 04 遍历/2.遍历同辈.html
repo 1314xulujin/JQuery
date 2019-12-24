@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>这是列表项1</li>
+    <li>这是列表项2</li>
+    <li id="li3">这是列表项3</li>
+    <li class="box">这是列表项4</li>
+    <li>这是列表项5</li>
+    <li>这是列表项6</li>
+    <li>这是列表项7</li>
+    <li>这是列表项8</li>
+    <li>这是列表项9</li>
+    <li>这是列表项10</li>
+</ul>
+<ul>
+    <li>哈哈哈哈哈哈哈啊哈啊哈1</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈2</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈3</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈4</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈5</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈6</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈7</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈8</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈9</li>
+    <li>哈哈哈哈哈哈哈啊哈啊哈10</li>
+</ul>
+<script src="../js/jquery-v1.12.0.js"></script>
+<script>
+    //遍历同辈元素 : 遍历与匹配元素所属同一父级层中的所有兄弟元素
+
+    //1.siblings() 遍历当前所选元素的所有兄弟元素 ,除自身以外
+    // $("#li3").siblings().css("color","red");
+
+    //2.next() 遍历当前元素的下一个同辈元素
+    //   $("#li3").next('.box').css("color","red");
+
+    //3.nextAll() 遍历当前元素后面所有兄弟元素
+    // $("#li3").nextAll().css("color","red");
+
+    //4.prev() 遍历当前元素的上一个兄弟元素
+    // $("#li3").prev().css("color","red");
+
+    //5.prevAll() 遍历当前元素前边所有兄弟元素
+    $("#li3").prevAll().css("color","red");
+</script>
+</body>
+</html>

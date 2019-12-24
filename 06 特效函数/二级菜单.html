@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+        }
+        .container{
+            width: 502px;
+            margin: 50px auto;
+        }
+        .nav{
+            height: 30px;
+            line-height: 30px;
+            /*border: 1px solid #ccc;*/
+        }
+
+        .nav > li{
+            position: relative;
+            float: left;
+            width: 100px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .nav > li:hover{
+            background: #63B8FF;
+        }
+        .nav .dropdown-menu{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            display: none;
+        }
+        .nav .dropdown-menu >li{
+            border: 1px solid #ccc;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="nav">
+            <li>
+                <a href="">一级导航1</a>
+                <ul class="dropdown-menu">
+                    <li><a href="">二级导航1</a></li>
+                    <li><a href="">二级导航2</a></li>
+                    <li><a href="">二级导航3</a></li>
+                    <li><a href="">二级导航4</a></li>
+                    <li><a href="">二级导航5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">一级导航2</a>
+                <ul class="dropdown-menu">
+                    <li><a href="">二级导航1</a></li>
+                    <li><a href="">二级导航2</a></li>
+                    <li><a href="">二级导航3</a></li>
+                    <li><a href="">二级导航4</a></li>
+                    <li><a href="">二级导航5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">一级导航3</a>
+                <ul class="dropdown-menu">
+                    <li><a href="">二级导航1</a></li>
+                    <li><a href="">二级导航2</a></li>
+                    <li><a href="">二级导航3</a></li>
+                    <li><a href="">二级导航4</a></li>
+                    <li><a href="">二级导航5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">一级导航4</a>
+                <ul class="dropdown-menu">
+                    <li><a href="">二级导航1</a></li>
+                    <li><a href="">二级导航2</a></li>
+                    <li><a href="">二级导航3</a></li>
+                    <li><a href="">二级导航4</a></li>
+                    <li><a href="">二级导航5</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">一级导航5</a>
+                <ul class="dropdown-menu">
+                    <li><a href="">二级导航1</a></li>
+                    <li><a href="">二级导航2</a></li>
+                    <li><a href="">二级导航3</a></li>
+                    <li><a href="">二级导航4</a></li>
+                    <li><a href="">二级导航5</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script>
+        $(".nav > li").hover(function(){
+            $(this).find(".dropdown-menu").stop().slideDown(400,'easeOutBounce');
+        },function(){
+            $(this).find(".dropdown-menu").stop().slideUp();
+        })
+    </script>
+</body>
+</html>

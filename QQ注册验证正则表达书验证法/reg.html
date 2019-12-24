@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>仿QQ注册</title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+	<div class="container">
+		<h2 class="reg-top"></h2>
+		<div class="reg-box">
+			<div class="reg-main">
+				<h3>注册账号</h3>
+				<form action="javascript:void(0)" method="post" class="reg-form" onsubmit="return checkSubmit()">
+					<div class="reg-input">
+						<label>昵称</label><input type="text" name="nick" id="nick"/><span id="nick-tip">长度为6-10个字符</span>
+					</div>
+					<div class="reg-input">
+						<label>密码</label>
+						<input type="password" name="psw" id="psw"/>
+						<span id="psw-tip">长度为6-16个字符</span>
+					</div>
+					<div class="reg-input">
+						<label>确认密码</label>
+						<input type="password" name="psw1" id="psw1"/>
+						<span id="psw1-tip">长度为6-16个字符</span>
+					</div>
+					<div class="reg-input">
+						<label>手机号码</label>
+						<input type="text" name="tel" id="tel"/>
+						<span id="tel-tip">忘记密码时可用手机号找回密码</span>
+					</div>
+					<div class="reg-input">
+						<label>邮箱</label>
+						<input type="text" name="mail" id="mail"/>
+						<span id="mail-tip"></span>
+					</div>
+					<div class="reg-input">
+						<label>年龄</label>
+						<input type="text" name="old" id="old"/>
+						<span id="old-tip"></span>
+					</div>
+					<div class="submit-box">
+						<button id="submit">立即注册</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="./js/jquery-v1.12.0.min.js"></script>
+	<!-- <script src="js/reg.js"></script> -->
+	<script src="./js/reg1.js"></script>
+ </body>
+</html>

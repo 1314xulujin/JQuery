@@ -1,0 +1,4 @@
+#box{
+    border:20px solid red!important;
+    box-shadow: 0 0 20px 10px green;
+}

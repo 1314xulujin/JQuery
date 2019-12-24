@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var str = 'abcd4154E555F1';
+
+    console.log(str.replace(/[a-z]/i,'*')); //i修饰符 : 不区分字母的大小写
+
+    console.log(str.replace(/[a-z]/ig,'*')); //g修饰符 : 全局匹配, 不会再匹配一项之后停止
+
+    // 只有当目标字符串含有\n，而且正则表达式中含有^或$的时候，/m修饰符才有作用
+        var reg = /^abc/m;
+        var sss = 'das\nabcsaddsasadasd';
+</script>
+</body>
+</html>

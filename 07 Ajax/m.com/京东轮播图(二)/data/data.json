@@ -1,0 +1,22 @@
+{
+  "code":200,
+  "msg":"Successful request for data from the rotation chart!",
+  "data":[
+    {
+      "imgUrl":"images/focus.jpg",
+      "url":"https://www.baidu.com"
+    },{
+      "imgUrl":"images/focus1.jpg",
+      "url":"https://www.taobao.com"
+    },{
+      "imgUrl":"images/focus2.jpg",
+      "url":"https://www.jd.com"
+    },{
+      "imgUrl":"images/focus3.jpg",
+      "url":"https://www.mi.com"
+    },{
+      "imgUrl":"images/focus4.jpg",
+      "url":"https://www.qq.com"
+    }
+  ]
+}

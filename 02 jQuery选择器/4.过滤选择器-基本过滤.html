@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>这是一个h1标题标签</h1>
+        <h2>这是一个h2标题标签</h2>
+        <h3>这是一个h3标题标签</h3>
+        <h4>这是一个h4标题标签</h4>
+        <h5>这是一个h5标题标签</h5>
+        <h6>这是一个h6标题标签</h6>
+
+    </div>
+    <ul>
+        <li>这是列表项1</li>
+        <li>这是列表项2</li>
+        <li>这是列表项3</li>
+        <li>这是列表项4</li>
+        <li>这是列表项5</li>
+        <li>这是列表项6</li>
+        <li>这是列表项7</li>
+        <li>这是列表项8</li>
+        <li>这是列表项9</li>
+        <li>这是列表项10</li>
+    </ul>
+
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    $(function () {
+        //16.:first 从匹配元素中, 选取第一个匹配元素
+        // $("li:first").css("background",'red');
+        //17. :last 从匹配元素中 ,选取最后一个匹配元素
+        // $("li:last").css("background",'green');
+
+        //18. :even 从匹配元素中,选取索引值为偶数的元素
+        // $("li:even").css("background",'green');
+
+        //19. :odd 从匹配元素中 ,选取索引值为奇数的元素
+        // $("li:odd").css("background",'red');
+
+        //20. :eq(index) 从匹配元素中 ,选取指定索引值index的元素
+        // $("li:eq(5)").css("background",'green');
+
+        //21. :gt(index) 从匹配元素中 ,选取指定索引值大于index的元素
+        $("li:gt(3)").css("background",'red');
+
+        //22. :lt(index) 从匹配元素中 ,选取指定索引值小于index的元素
+        $("li:lt(3)").css("background",'green');
+
+        //23. :header  从匹配元素中 ,选取所有的标题元素
+        $(":header").css("color","red");
+
+        //24. * 通配符 ,选择所有元素
+        $("*").css("color","green");
+
+        //25. :animated 从匹配元素中 ,选取正在执行动画的元素
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /**去除所有标签内\外边距**/
+        *{
+            padding:0;
+            margin:0;
+        }
+        /**去除所有的列表样式**/
+        ul{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+            font-size:12px;
+        }
+
+        .container{
+            width:200px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+        }
+        .title{
+            font-weight:normal;
+            background-color:#b1191a;
+            color:#fff;
+            line-height:35px;
+            height:35px;
+            font-size:16px;
+            text-indent:10px;
+        }
+        li{
+            /*background-color:#c81623;*/
+            text-indent:10px;
+            line-height:25px;
+            background-image:url(images/bg.png);
+            background-repeat:no-repeat;
+            background-position:180px;
+        }
+    </style>
+    <script src="../js/jquery-v1.12.0.js"></script>
+</head>
+<body>
+<div class="container">
+    <h3 class="title">全部商品分类</h3>
+    <ul class="navmenu" id="list1">
+        <li><a href="">家用电器</a></li>
+        <li><a href="">手机</a>、<a href="">数码</a>、<a href="">京东通信</a></li>
+        <li><a href="">电脑</a>、<a href="">办公</a></li>
+        <li><a href="">家居</a>、<a href="">家具</a>、<a href="">家装</a>、<a href="">厨具</a></li>
+        <li><a href="">男装</a>、<a href="">女装</a>、<a href="">珠宝</a></li>
+        <li><a href="">个护化妆</a></li>
+        <li><a href="">鞋靴</a>、<a href="">箱包</a>、<a href="">钟表</a>、<a href="">奢侈品</a></li>
+        <li><a href="">运动户外</a></li>
+    </ul>
+</div>
+<div class="container">
+    <h3 class="title">全部商品分类</h3>
+    <ul class="navmenu" id="list2">
+        <li><a href="">家用电器</a></li>
+        <li><a href="">手机</a>、<a href="">数码</a>、<a href="">京东通信</a></li>
+        <li><a href="">电脑</a>、<a href="">办公</a></li>
+        <li><a href="">家居</a>、<a href="">家具</a>、<a href="">家装</a>、<a href="">厨具</a></li>
+        <li><a href="">男装</a>、<a href="">女装</a>、<a href="">珠宝</a></li>
+        <li><a href="">个护化妆</a></li>
+        <li><a href="">鞋靴</a>、<a href="">箱包</a>、<a href="">钟表</a>、<a href="">奢侈品</a></li>
+        <li><a href="">运动户外</a></li>
+    </ul>
+</div>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script>
+    //使用原生JavaScript 实现
+    var list1 = document.getElementById("list1").getElementsByTagName("li");
+    // console.log(list1);
+    for (var i=0;i<list1.length;i++){
+        if(i%2!==0){
+            list1[i].style.backgroundColor = "#ccc";
+        }
+    }
+
+    //使用jQuery实现
+    $("#list2 li:odd").css("background",'#f30');
+</script>
+</body>
+</html>

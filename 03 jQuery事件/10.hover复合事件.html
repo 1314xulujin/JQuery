@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button>移除点击事件</button>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+   //hover(enter,leave)  = > :hover  集鼠标的悬停和离开 事件
+
+    $(".box").hover(function(){
+       console.log("鼠标悬停!");
+    },function(){
+        console.log("鼠标离开!");
+    });
+
+
+</script>
+</body>
+</html>

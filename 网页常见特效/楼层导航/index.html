@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        html,body{
+            height: 100%;
+        }
+        .container{
+            height: 700%;
+        }
+        .container > div{
+            height:14.2857%;
+            font-size: 200px;
+            text-align: center;
+            line-height: 100vh;
+            color: #fff;
+            text-shadow: 0 0 10px #999;
+            font-weight: 400;
+        }
+        .sec1{
+            background-color: #FFEFD5;
+        }
+        .sec2{
+            background-color: #FFB5C5;
+        }
+        .sec3{
+            background-color: #F5DEB3;
+        }
+        .sec4{
+            background-color: #CDCD00;
+        }
+        .sec5{
+            background-color: #B2DFEE;
+        }
+        .sec6{
+            background-color: #EE6AA7;
+        }
+        .sec7{
+            background-color: #43CD80;
+        }
+
+        .navLeft{
+            position: fixed;
+            left: 0;
+            top: 50%;
+            margin-top: -165px;
+            width: 40px;
+            background: #ce2c1d;
+            border: 1px solid #fff;
+            box-shadow: 1px 0 5px #999;
+        }
+        .navLeft a{
+            display: block;
+            width: 40px;
+            text-align: center;
+            height: 40px;
+            color: #fff;
+            line-height: 40px;
+            font-size: 12px;
+            border-bottom: 1px dashed #f1f1f1;
+        }
+        .navLeft a.toTop{
+            line-height: 20px;
+            padding: 2px 0;
+            border-bottom: none;
+        }
+
+        .navLeft a.on,.navLeft a:hover{
+            background: #43cd80;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sec1">1楼</div>
+        <div class="sec2">2楼</div>
+        <div class="sec3">3楼</div>
+        <div class="sec4">4楼</div>
+        <div class="sec5">5楼</div>
+        <div class="sec6">6楼</div>
+        <div class="sec7">7楼</div>
+    </div>
+    <!--导航-->
+    <div class="navLeft">
+        <a class="on" href="javascript:void(0)">1F</a>
+        <a href="javascript:void(0)">2F</a>
+        <a href="javascript:void(0)">3F</a>
+        <a href="javascript:void(0)">4F</a>
+        <a href="javascript:void(0)">5F</a>
+        <a href="javascript:void(0)">6F</a>
+        <a href="javascript:void(0)">7F</a>
+        <a href="javascript:void(0)" class="toTop">返回<br>顶部</a>
+    </div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script>
+        /**
+         * 需求:
+         *       1.实现点击楼层导航 ,切换到对应的视图楼层
+         *
+         *       2.滚动页面 ,再导航上切换对应的楼层编号
+         *
+         *   实现思路:
+         *      1.点击楼层导航,页面滚动到对应的楼层未知, 其实就是滚动到,该楼层未知元素 ,距离网页文档顶部的距离
+         *      2.可以使用一个数组  , 存储每个楼层元素距离网页顶部的距离
+         *
+         *      3.滚动的距离 属于
+         * */
+
+        var topH = []; //存储每个楼层元素距离网页顶部的距离
+        $(".container > div").each(function(index,item){
+            topH.push($(item).offset().top);
+            // console.log($(item).offset());
+        })
+
+
+        //导航点击事件
+        $(".navLeft a").click(function(){
+            var index = $(this).addClass("on").siblings().removeClass("on").end().index();
+            var scrollTop = index>6?0:topH[index];
+            $("html,body").stop().animate({
+                scrollTop:scrollTop
+            },500);
+        })
+
+        //滚动事件
+        $(window).scroll(function(){
+            var scrollH = $(this).scrollTop(); //获取当前的滚动高度
+           var index = getFloor(scrollH + 100);
+            console.log(index);
+           $(".navLeft a").eq(index).addClass("on").siblings().removeClass("on");
+        })
+
+        //定一个方法 ,用于获取当前滚动距离的楼层索引值
+        function getFloor(scrollH){//scrollH 滚动距离
+            for(var i=0;i<topH.length;i++){
+                if(scrollH >= topH[i] && scrollH <topH[i+1]){
+                    return i;
+                }else if (i>=topH.length-1 && scrollH >=topH[topH.length - 1]) {
+                    return i;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

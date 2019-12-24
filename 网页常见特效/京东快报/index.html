@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #000;
+        }
+        .container{
+            position: relative;
+            width: 300px;
+            margin: 50px auto;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #fff;
+            padding: 0 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px 5px gold;
+            overflow: hidden;
+        }
+
+        
+        a{
+            text-decoration: none;
+            font-size: 12px;
+            color: #fff;
+            display: block;
+        }
+        .box{
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="box">
+            <li><a href="">1.每天按时按量完整作业</a></li>
+            <li><a href="">2.每天都要背单词</a></li>
+            <li><a href="">3.每天早睡早起,坚持锻炼</a></li>
+            <li><a href="">4.每天课后复习案例的回顾</a></li>
+            <li><a href="">5.坚持课前预习</a></li>
+        </ul>
+    </div>
+    <script src="../js/jquery-v1.12.0.min.js"></script>
+    <script>
+        // var index  = 0;
+        // setInterval(function(){
+        //     index++;
+        //     index%=5;
+        //     $(".box").animate({
+        //         top:-index * 30
+        //     },500)
+        // },1500);
+
+        setInterval(function(){
+            $(".box").animate({
+                top:-30
+            },500,function(){
+                $(".box").css("top",0);
+                $(".box li:first").appendTo(".box");
+            })
+        },1500)
+    </script>
+</body>
+</html>

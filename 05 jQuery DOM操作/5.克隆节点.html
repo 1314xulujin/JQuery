@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 50px auto;
+        }
+
+        .container div{
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>克隆clone()</button>
+<button>克隆clone(true)</button>
+
+<div class="container">
+    <div>教育改变生活!</div>
+</div>
+
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+
+    $(".container").click(function(){
+        alert('单击事件!');
+    })
+
+    //clone() 方法  ,克隆匹配元素 ,得到一个新的元素
+    $("button:first").click(function(){
+        // var node = $(".container").clone();
+
+        var node = $(".container").clone(true); //true 表示连事件一起克隆过去
+        $("body").append(node);
+    })
+
+</script>
+</body>
+</html>

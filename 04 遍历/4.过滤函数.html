@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="on">这是列表项内容1</li>
+        <li>这是列表项内容2</li>
+        <li>这是列表项内容3</li>
+        <li>这是列表项内容4</li>
+        <li>这是列表项内容5</li>
+        <li>这是列表项内容6</li>
+        <li>这是列表项内容7</li>
+        <li>这是列表项内容8</li>
+        <li>
+           <span> 这是列表项内容9</span>
+        </li>
+        <li>这是列表项内容10</li>
+    </ul>
+    <script src="../js/jquery-v1.12.0.js"></script>
+    <script>
+        //过滤函数  与  过滤选择器相似, 目的都是用于筛选过滤匹配元素
+
+        //1.first() 从匹配元素中 过滤出第一个匹配元素
+        // $("li").first().css("color","red");
+
+        //2.last() 从匹配元素中 过滤出最后一个匹配元素
+        // $("li").last().css("color","red");
+
+        //3.eq(index)从匹配元素中 过滤出索引值为index的匹配元素
+        // $("li").eq(5).css("color","red");
+
+        //4.hasClass() 检测元素是否具有某个类名的方法, 如果有返回 true, 没有返回false
+        // console.log($("li").eq(0).hasClass("on"));
+
+        //5.filter(expr) 从匹配元素中 ,过滤指定表达式的元
+        // console.log($("li").filter(".on"))
+
+        //6.is(expr) 用于检测判断是否是表达式匹配元素
+        // console.log($("li").eq(0).is(".on"))
+
+        //7.map(fn) 用法与数组中的map 一样 ,但此处遍历的是jQ元素
+        // var a = $("li").map(function (index,item) {
+        //       // console.log(item.innerHTML);
+        //     return item.innerHTML;
+        // })
+
+        //8.has() 保留包含特定后代的元素，去掉那些不含有指定后代的元素。
+        // console.log($("li").has("span"));
+
+        //9.not() 删除与表达式匹配的元素
+        // console.log($("li").not(".on"));
+
+        //10.slice(start,end)
+        console.log($("li").slice(0,4))
+        //has*   .  is*   = > 用于进行检测 或者判断 ,返回布尔值
+    </script>
+</body>
+</html>

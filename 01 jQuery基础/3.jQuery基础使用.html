@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    //使用jQuery 之前 ,需要先引入 ,然后再编写或引入自己的js
+    // console.log(jQuery);
+
+    //jQuery === $(别名)
+
+    //console.log(jQuery === $);
+
+    //工厂函数 jQuery() ==  $()
+
+    //解决jQuery $ 符合的使用冲突
+    var RMB = jQuery.noConflict();
+
+    console.log(RMB);
+
+    /*
+     语法结构:
+        jQuery(选择器).执行的操作()
+
+        例如: 给一个类名为.box 的按钮,设置一个点击事件
+        jQuery(".box").click(function(){
+            alert('单机事件')
+        })
+
+        理解为 : 先找到需要执行操作的DOM元素 ,然后给设定一个操作(可以是事件,也可是一个DOM的增删改查)
+
+      */
+
+</script>
+</body>
+</html>

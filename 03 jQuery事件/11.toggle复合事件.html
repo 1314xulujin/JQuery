@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>点击按钮</button>
+<div class="box"></div>
+<!--<script src="../js/jquery-1.8.3.min.js"></script>-->
+<script src="../js/jquery-v1.12.0.min.js"></script>
+<script>
+    //toggle() 1.9- : 模拟鼠标连续点击  ,1.9+切换显示隐藏的功能
+    // $("button").toggle(function(){
+    //     $(".box").css("background","pink");
+    // },function(){
+    //     $(".box").css("background","green");
+    // },function(){
+    //     $(".box").css("background","purple");
+    // },function(){
+    //     $(".box").css("background","orange");
+    // },function(){
+    //     $(".box").css("background","cyan");
+    // })
+
+    $("button").click(function(){
+        $(".box").toggle(400);
+    })
+</script>
+</body>
+</html>
